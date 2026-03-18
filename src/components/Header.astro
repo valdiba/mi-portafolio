@@ -1,0 +1,59 @@
+<header class="sticky top-4 z-50 mx-4 mt-4 max-w-7xl rounded-full bg-white/70 backdrop-blur-md border border-gray-200 shadow-sm lg:mx-auto">
+  <nav aria-label="Global" class="flex items-center justify-between px-6 py-4 lg:px-8">
+    
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5">
+        <span class="sr-only">Valentina Díaz</span>
+        <span class="text-2xl font-black tracking-tighter text-slate-900">Valdi.</span>
+      </a>
+    </div>
+
+    <div class="flex lg:hidden">
+      <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-50 transition-colors">
+        <span class="sr-only">Abrir menú principal</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex lg:gap-x-12">
+      <a href="/" class="text-sm/6 font-semibold text-slate-600 hover:text-brand transition-colors">Home</a>
+      <a href="/casos" class="text-sm/6 font-semibold text-slate-600 hover:text-brand transition-colors">Case Studies</a>
+      <a href="/sobre-mi" class="text-sm/6 font-semibold text-slate-600 hover:text-brand transition-colors">About Me</a>
+    </div>
+  </nav>
+
+  <el-dialog>
+    <dialog id="mobile-menu" class="backdrop:bg-slate-900/20 lg:hidden">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm shadow-2xl">
+          
+          <div class="flex items-center justify-between">
+            <a href="/" class="-m-1.5 p-1.5">
+              <span class="sr-only">Valentina Díaz</span>
+              <span class="text-2xl font-black tracking-tighter text-slate-900">VD.</span>
+            </a>
+            <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-50 transition-colors">
+              <span class="sr-only">Cerrar menú</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-100">
+              <div class="space-y-2 py-6">
+                <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Inicio</a>
+                <a href="/casos" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Casos de estudio</a>
+                <a href="/sobre-mi" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Sobre mí</a>
+              </div>
+            </div>
+          </div>
+
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+</header>
