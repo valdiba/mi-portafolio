@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #FB5F5F;
-  --color-brand-hover: #E54848;
+  --color-brand: #FE719A;
+  --color-brand-hover: #F7BCD0;
+  --color-archival: #E07A7A;
+  --font-serif: "Instrument Serif", serif;
 }
 
 @layer utilities {
@@ -12,6 +14,12 @@
   .scrollbar-hide {
       -ms-overflow-style: none;
       scrollbar-width: none;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply font-serif font-normal tracking-normal text-slate-950;
   }
 }
 

@@ -2,57 +2,65 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
-	<div class="overflow-x-hidden">
+<div class="overflow-x-hidden">
+<div class="relative isolate px-6 pt-4 lg:px-8">
+    <div class="mx-auto max-w-6xl pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-20">
+        <div class="text-center">
+			<span class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block">Hi, I'm Val Diaz — Lead Product Designer</span>
+            
+            <!-- Contenedor relativo en el texto -->
+            <h1 class="relative text-6xl sm:text-8xl lg:text-8xl tracking-tight text-balance text-gray-900">
+                <!-- Imagen trasera -->
+                <img src="/Folder.png" alt="Decoración fondo" class="absolute -bottom-32 left-1/2 -z-10 w-[200px] max-w-none -translate-x-1/2">
+                
+                Engineering Logic. <br>
+Visual Mastery.
+                
+                <!-- Imagen frontal -->
+                <img src="/Folder2.png" alt="Decoración frente" class="absolute -bottom-32 left-1/2 z-9 w-[200px] max-w-none -translate-x-1/2 pointer-events-none">
+            </h1>
+			<h1 class="relative text-6xl sm:text-8xl lg:text-8xl tracking-tight text-balance text-gray-900 z-10">Lead Mindset.</h1>
+            
+            <p class="mt-16 text-lg text-pretty text-gray-900 sm:text-xl/8">I architect scalable systems and high-impact digital products. By bridging engineering logic with premium visual craft, I lead teams to build interfaces that serve a purpose and systems that are built to last.
+            </p>
+            <p class="mt-8 text-lg text-pretty text-gray-900 sm:text-xl/8">Currently leading design
+                excellence at EPAM for global brands.</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="/casos"
+                    class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-hover">View
+                    Projects</a>
+                <a href="/sobre-mi" class="text-sm/6 font-semibold text-gray-900">Learn more about me <span
+                        aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-		<div class="relative isolate px-6 pt-14 lg:px-8">
-			<div class="mx-auto max-w-2xl pt-16 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-20">
-				<div class="text-center">
-					<h2 class="text-base/7 font-semibold text-brand">Hi, I'm Val Diaz — Lead Product Designer</h2>
-					<h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">Engineering
-						Logic. Visual Mastery. Lead Mindset.</h1>
-					<p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">I design scalable systems
-						and high-impact digital products. From auditing Figma libraries to leading multidisciplinary
-						teams, I ensure every pixel and interface serves a purpose and every system is built to last.
-					</p>
-					<p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">Currently leading design
-						excellence at EPAM for global brands.</p>
-					<div class="mt-10 flex items-center justify-center gap-x-6">
-						<a href="/casos"
-							class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-hover">View
-							Projects</a>
-						<a href="/sobre-mi" class="text-sm/6 font-semibold text-gray-900">Learn more about me <span
-								aria-hidden="true">→</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="relative isolate px-6 pt-12 pb-24 sm:pt-16 sm:pb-32 lg:px-8">
+<div class="relative isolate px-6 pt-12 pb-24 sm:pt-16 sm:pb-32 lg:px-8">
 			<div class="mx-auto max-w-4xl text-center">
-				<h2 class="text-base/7 font-semibold text-brand">How do I work</h2>
-				<p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">My Core
-					Pillars</p>
+				<h2 class="mt-2 text-5xl tracking-tight text-balance text-gray-900 sm:text-7xl">My Core
+					Pillars</h2>
 			</div>
-			<p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+			<p class="mx-auto mt-6 max-w-6xl text-center text-lg text-pretty text-gray-900 sm:text-xl/8">
 				Driving product success by bridging the gap between design and engineering through robust systems,
 				strategic thinking, and collaborative leadership.</p>
 
 			<div
-				class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-stretch gap-6 sm:mt-20 lg:max-w-4xl lg:grid-cols-3 lg:gap-8">
-				<div class="rounded-3xl bg-white/40 backdrop-blur-md p-8 shadow-xl ring-1 ring-white/60 sm:p-10">
-					<h3 class="text-base/7 font-semibold text-brand">Scalable Design Systems & Ops</h3>
+				class="mx-auto mt-16 grid grid-cols-1 items-stretch sm:mt-20 lg:grid-cols-3">
+				<div class="p-8 sm:p-10">
+					<h3 class="text-base/7 font-semibold uppercase text-gray-900">Scalable Design Systems & Ops</h3>
 					<p class="mt-6 text-base/7 text-gray-600">I architect and maintain robust design languages that
 						bridge the gap between design and code. From auditing extensive Figma libraries to defining
 						global standards, I ensure consistency and efficiency at every scale.</p>
 				</div>
-				<div class="rounded-3xl bg-white/40 backdrop-blur-md p-8 shadow-xl ring-1 ring-white/60 sm:p-10">
-					<h3 class="text-base/7 font-semibold text-brand">Engineering-Driven UX Strategy</h3>
+				<div class="p-8 sm:p-10">
+					<h3 class="text-base/7 font-semibold uppercase text-gray-900">Engineering-Driven UX Strategy</h3>
 					<p class="mt-6 text-base/7 text-gray-600">With a background in Computer Engineering, I approach UX
 						with a logic-first mindset. I design high-fidelity solutions that are not only visually premium
 						but technically feasible and aligned with business goals.</p>
 				</div>
-				<div class="rounded-3xl bg-white/40 backdrop-blur-md p-8 shadow-xl ring-1 ring-white/60 sm:p-10">
-					<h3 class="text-base/7 font-semibold text-brand">Mentorship & Team Leadership</h3>
+				<div class="p-8 sm:p-10">
+					<h3 class="text-base/7 font-semibold uppercase text-gray-900">Mentorship & Team Leadership</h3>
 					<p class="mt-6 text-base/7 text-gray-600">Leading is about empowering others. I have mentored
 						emerging talent and led cross-functional teams, ensuring design quality through rigorous reviews
 						and established workflows that foster excellence, including leading design quality for teams of
@@ -61,15 +69,17 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 
+
+
+
 		<div class="py-24 sm:py-32">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl lg:text-center">
-					<h2 class="text-base/7 font-semibold text-brand">How I Can Help</h2>
+					<h2
+						class="mt-2 text-5xl tracking-tight text-pretty text-gray-900 sm:text-6xl lg:text-balance">
+						Services</h2>
 					<p
-						class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-						Services</p>
-					<p
-						class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty text-gray-900 sm:text-xl/8">
 						Leveraging engineering logic and premium visual craft to solve complex product challenges. I
 						help teams scale through robust design systems, strategic leadership, and efficient workflows.
 					</p>
@@ -77,7 +87,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
 					<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
 						<div class="flex flex-col">
-							<dt class="text-base/7 font-semibold text-gray-900">
+							<dt class="text-3xl text-gray-900">
 								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-brand">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
 										aria-hidden="true" class="size-6 text-white">
@@ -87,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
 								</div>
 								Design Systems & Scalability
 							</dt>
-							<dd class="mt-2 text-base/7 text-gray-600">
+							<dd class="mt-2 text-base/7 text-gray-900">
 								<ul class="list-disc pl-5 space-y-2">
 									<li><strong>Audit & Strategy:</strong> I conduct deep inventories of existing Figma
 										libraries to identify inconsistencies and technical debt.</li>
@@ -99,7 +109,7 @@ import Layout from '../layouts/Layout.astro';
 							</dd>
 						</div>
 						<div class="flex flex-col">
-							<dt class="text-base/7 font-semibold text-gray-900">
+							<dt class="text-3xl text-gray-900">
 								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-brand">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
 										aria-hidden="true" class="size-6 text-white">
@@ -109,7 +119,7 @@ import Layout from '../layouts/Layout.astro';
 								</div>
 								Strategic Visual & Product Design
 							</dt>
-							<dd class="mt-2 text-base/7 text-gray-600">
+							<dd class="mt-2 text-base/7 text-gray-900">
 								<ul class="list-disc pl-5 space-y-2">
 									<li><strong>High-Fidelity Craft:</strong> Transforming complex business requirements
 										into premium, polished interfaces that align with brand identity.</li>
@@ -121,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
 							</dd>
 						</div>
 						<div class="flex flex-col">
-							<dt class="text-base/7 font-semibold text-gray-900">
+							<dt class="text-gray-900 text-3xl">
 								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-brand">
 									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
 										aria-hidden="true" class="size-6 text-white">
@@ -131,7 +141,7 @@ import Layout from '../layouts/Layout.astro';
 								</div>
 								Design Ops & Leadership
 							</dt>
-							<dd class="mt-2 text-base/7 text-gray-600">
+							<dd class="mt-2 text-base/7 text-gray-900">
 								<ul class="list-disc pl-5 space-y-2">
 									<li><strong>Team Governance:</strong> Establishing internal frameworks and best
 										practices to improve collaboration and output quality.</li>
@@ -147,18 +157,17 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 
-		
 
-			<div class="relative isolate py-24 sm:py-32">
+
+		<div class="relative isolate py-24 sm:py-32">
 			<div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-				<h2 class="text-center text-base/7 font-semibold text-brand tracking-wide uppercase">Case studies</h2>
-				<p
-					class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
-					Turning Complex Challenges into Seamless Experiences</p>
+				<h2
+					class="mx-auto mt-2 text-center text-5xl tracking-tight text-balance text-gray-950 sm:text-6xl">
+					Turning Complex Challenges into Seamless Experiences</h2>
 
 				<div class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
-					<div class="lg:col-span-7 group cursor-pointer flex flex-col">
+					<a href="/scaling-growth" class="lg:col-span-7 group cursor-pointer flex flex-col">
 						<div class="overflow-hidden rounded-[2rem] w-full h-[300px] sm:h-[450px] mb-8 shadow-sm">
 							<img src="/DestinationDecoderExp.svg" alt="App de Travel"
 								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -168,7 +177,7 @@ import Layout from '../layouts/Layout.astro';
 								class="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-600 mb-4 tracking-wider uppercase">Travel
 								& AI</span>
 							<h3
-								class="text-3xl font-bold text-gray-950 mb-4 leading-tight group-hover:text-brand transition-colors">
+								class="text-3xl font-medium text-gray-950 mb-4 leading-tight group-hover:text-brand transition-colors">
 								Scaling Growth through Motion & Systems</h3>
 							<p class="text-lg text-gray-600 mb-6 line-clamp-3">Leading cross-platform experiences for
 								web and mobile. Contributed to $14.9M GP and 1.48M installs by surpassing annual targets
@@ -177,22 +186,22 @@ import Layout from '../layouts/Layout.astro';
 								class="text-brand font-bold text-base hover:text-brand-hover transition-colors flex items-center gap-1">View
 								more <span aria-hidden="true">&rarr;</span></span>
 						</div>
-					</div>
+					</a>
 
 					<div class="lg:col-span-5 flex flex-col gap-10">
 
-						<div class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
+						<a href="/casos?case=airgas" class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
 							<div class="w-full sm:w-44 sm:h-44 shrink-0 overflow-hidden rounded-2xl shadow-sm">
-								<img src="/airgas.png"
-									alt="Design Systems"
+								<img src="/airgas.png" alt="Design Systems"
 									class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 							</div>
 							<div class="flex flex-col items-start justify-center pt-2 sm:pt-0">
 								<span
-									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Gas & Design
+									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Gas
+									& Design
 									Systems</span>
 								<h3
-									class="text-xl font-bold text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
+									class="text-xl font-medium text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
 									Elevating Design Excellence & Ops</h3>
 								<p class="text-sm text-gray-600 mb-4 line-clamp-2">Redesigned, managed and evolved
 									complex UI libraries for a Fortune 500 client.</p>
@@ -200,9 +209,9 @@ import Layout from '../layouts/Layout.astro';
 									class="text-brand font-bold text-sm hover:text-brand-hover transition-colors flex items-center gap-1">View
 									more <span aria-hidden="true">&rarr;</span></span>
 							</div>
-						</div>
+						</a>
 
-						<div class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
+						<a href="/casos?case=ekos" class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
 							<div class="w-full sm:w-44 sm:h-44 shrink-0 overflow-hidden rounded-2xl shadow-sm">
 								<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
 									alt="Data"
@@ -210,19 +219,22 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 							<div class="flex flex-col items-start justify-center pt-2 sm:pt-0">
 								<span
-									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Production & Data
+									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Production
+									& Data
 									Architecture</span>
 								<h3
-									class="text-xl font-bold text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
+									class="text-xl font-medium text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
 									Revolutionizing Production Planning at Scale</h3>
-								<p class="text-sm text-gray-600 mb-4 line-clamp-2">Reduced development time by 20% and increased customer satisfaction by 15% by unifying the UX across platforms and establishing a scalable Design System..</p>
+								<p class="text-sm text-gray-600 mb-4 line-clamp-2">Reduced development time by 20% and
+									increased customer satisfaction by 15% by unifying the UX across platforms and
+									establishing a scalable Design System..</p>
 								<span
 									class="text-brand font-bold text-sm hover:text-brand-hover transition-colors flex items-center gap-1">View
 									more <span aria-hidden="true">&rarr;</span></span>
 							</div>
-						</div>
+						</a>
 
-						<div class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
+						<a href="/casos?case=coign" class="flex flex-col sm:flex-row gap-6 group cursor-pointer items-start">
 							<div
 								class="w-full sm:w-44 sm:h-44 shrink-0 overflow-hidden rounded-2xl shadow-sm bg-gray-900">
 								<img src="/Coign.png" alt="Fintech"
@@ -230,9 +242,10 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 							<div class="flex flex-col items-start justify-center pt-2 sm:pt-0">
 								<span
-									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Fintech & Visual Design</span>
+									class="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold text-gray-600 mb-3 tracking-wider uppercase">Fintech
+									& Visual Design</span>
 								<h3
-									class="text-xl font-bold text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
+									class="text-xl font-medium text-gray-950 mb-2 leading-tight group-hover:text-brand transition-colors">
 									Architecting an "Unmissable" Experience</h3>
 								<p class="text-sm text-gray-600 mb-4 line-clamp-2">Spearheaded a robust Web App that
 									unified applicant management, earning praise from The WSJ.</p>
@@ -240,7 +253,7 @@ import Layout from '../layouts/Layout.astro';
 									class="text-brand font-bold text-sm hover:text-brand-hover transition-colors flex items-center gap-1">View
 									more <span aria-hidden="true">&rarr;</span></span>
 							</div>
-						</div>
+						</a>
 
 					</div>
 				</div>
@@ -255,16 +268,20 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 		<section id="testimonials-section" class="relative isolate py-24 sm:py-32">
+			<!-- Elementos de fondo para que el efecto glass sea visible -->
+			<div class="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden pointer-events-none">
+				<div class="w-[40rem] h-[40rem] rounded-full bg-brand/10 blur-[100px] absolute -left-20 top-20"></div>
+				<div class="w-[30rem] h-[30rem] rounded-full bg-blue-400/10 blur-[100px] absolute right-0 bottom-20"></div>
+			</div>
+
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mb-20 text-center">
-					<h2 class="text-center text-base/7 font-semibold text-brand">High-impact feedback from leaders
-						across top technology teams</h2>
+					<h2
+						class="mx-auto mt-2 max-w-lg text-center text-5xl tracking-tight text-balance text-gray-950 sm:text-6xl">
+						What people are saying</h2>
 					<p
-						class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
-						What people are saying</p>
-					<p
-						class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
-						8+ clients from 4+ countries.</p>
+						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty text-gray-900 sm:text-xl/8">
+						High-impact feedback from leaders across top technology teams.</p>
 				</div>
 			</div>
 
@@ -272,12 +289,13 @@ import Layout from '../layouts/Layout.astro';
 				<div id="scroll-row-1" class="flex gap-8 w-max will-change-transform items-stretch"
 					style="transform: translateX(-15%);">
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>“Outstanding contributions. Valentina’s ability to <strong>quickly understand project
 									requirements,</strong> combined with her effective communication skills, ensures
 								<strong>smooth collaboration</strong> and timely delivery of <strong>high-quality
-									work</strong>”</p>
+									work</strong>”
+							</p>
 						</blockquote>
 						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
 							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
@@ -289,7 +307,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Working with Val over the course of 2024 has personally been a highlight for me. She is
 								<strong>proactive and forward thinking.</strong> She has a <strong>growth
@@ -297,7 +315,8 @@ import Layout from '../layouts/Layout.astro';
 								am looking forward to working with her more. Her visual skills are top notch, but I also
 								think she has a <strong>great creative mind</strong> and is willing to <strong>push into
 									new spaces.</strong> This is one of the top behaviors I appreciate in any designer.
-								It is a great combination..."</p>
+								It is a great combination..."
+							</p>
 						</blockquote>
 						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
 							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
@@ -309,7 +328,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Valentina’s combination of technical skills, rapid learning ability, and excellent
 								communication makes her an asset to any team. Her contribution goes beyond individual
@@ -328,12 +347,13 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>“Outstanding contributions. Valentina’s ability to <strong>quickly understand project
 									requirements,</strong> combined with her effective communication skills, ensures
 								<strong>smooth collaboration</strong> and timely delivery of <strong>high-quality
-									work</strong>”</p>
+									work</strong>”
+							</p>
 						</blockquote>
 						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
 							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
@@ -348,7 +368,7 @@ import Layout from '../layouts/Layout.astro';
 				<div id="scroll-row-2" class="flex gap-8 w-max will-change-transform items-stretch"
 					style="transform: translateX(5%);">
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Valentina <strong>effectively integrated AI tools to streamline workflows, significantly
 									increasing team efficiency</strong>. She provides <strong>expert guidance and
@@ -368,7 +388,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Valentina <strong>quickly took charge</strong>, establishing a <strong>design governance
 									process</strong> and managing the <strong>design system</strong> to keep the team
@@ -386,7 +406,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Valentina is a <strong>true role model</strong> for both technical quality and positive
 								collaboration. Her biggest strength is making the <strong>design handoff completely
@@ -406,7 +426,7 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white p-10 shadow-xl shadow-slate-100/70 ring-1 ring-gray-100">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
 						<blockquote class="text-gray-900 text-lg/7 mb-10">
 							<p>"Val is key to keeping a <strong>Design System moving in the right direction.</strong>
 								She has a strong understanding of business and scalability, making thoughtful decisions
@@ -488,4 +508,5 @@ import Layout from '../layouts/Layout.astro';
 			}
 		});
 	</script>
+</div>
 </Layout>
