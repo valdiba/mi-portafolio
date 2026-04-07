@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="overflow-x-hidden pt-8">
+  <div class="overflow-x-hidden pt-2">
 
-    <section class="px-6 pt-16 pb-24 mx-auto max-w-7xl lg:px-8 mt-4 mb-16">
+    <section class="px-6 pt-8 pb-24 mx-auto max-w-7xl lg:px-8 mt-2 mb-16">
       <div class="max-w-3xl mx-auto text-center mb-16">
         <span class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block">About me</span>
-        <h1 class="text-5xl tracking-tight text-balance text-gray-900 sm:text-7xl">I am Valentina Díaz.
-          Lead Product Designer</h1>
+        <h1 class="text-5xl tracking-tight text-balance text-gray-900 sm:text-7xl">I am Valentina Díaz B. </h1>
+
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -20,31 +20,26 @@ import Layout from '../layouts/Layout.astro';
             dual lens: an obsession with high-end visual aesthetics and a deep understanding of technical feasibility.
             This hybrid background allows me to bridge the gap between complex backend logic and seamless, human-centric
             interfaces.</p>
-
-          <div class="mt-12 space-y-4 text-slate-900 font-medium">
-            <div class="flex items-center gap-3">
-              <span class="text-brand text-2xl">✦</span>
-              <span class="text-l text-slate-900 leading-relaxed">Informactics Engineer</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-brand text-2xl">✦</span>
-              <span class="text-l text-slate-900 leading-relaxed">Design Systems and Design Ops Specialist</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-brand text-2xl">✦</span>
-              <span class="text-l text-slate-900 leading-relaxed">Analog experiences lover</span>
-            </div>
-          </div>
         </div>
 
-        <div class="md:col-span-7 relative h-[600px]">
-          <div class="absolute top-0 right-0 w-[70%] h-[80%] rounded-3xl overflow-hidden shadow-2xl rotate-2">
-            <img src="/details.png" alt="Valentina Díaz" class="w-full h-full object-cover">
-          </div>
-          <div
-            class="absolute bottom-10 left-0 w-[50%] h-[60%] rounded-3xl overflow-hidden shadow-2xl -rotate-3 ring-8 ring-white">
-            <img src="/me.jpeg" alt="Detalle visual" class="w-full h-full object-cover">
-          </div>
+        <div class="md:col-span-7 relative h-[400px]">
+          <img src="/me-folder.png" alt="About me folder" class="w-3/4 md:w-2/3 mx-auto block h-auto object-cover">
+          <span class="absolute top-1/2 left-1/2 inline-flex items-center rounded-full border border-slate-100 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand mr-2 block"></span>
+            Lead Product Designer
+          </span>
+          <span class="absolute top-2/3 left-8 inline-flex items-center rounded-full border border-slate-100 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand mr-2 block"></span>
+            Informatics Engineer
+          </span>
+          <span class="absolute top-4/5 -right-8 inline-flex items-center rounded-full border border-slate-100 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand mr-2 block"></span>
+            Analog Experience Lover
+          </span>
+          <span class="absolute top-9/10 left-1/8 inline-flex items-center rounded-full border border-slate-100 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-xl">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand mr-2 block"></span>
+            Design Systems and Design Ops Specialist
+          </span>
         </div>
       </div>
     </section>
