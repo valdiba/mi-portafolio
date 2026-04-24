@@ -1,241 +1,680 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import CaseStudyModal from "../components/CaseStudyModal.astro";
+
+const coverMap: Record<string, string[]> = {
+	"modal-expedia": [
+		"/expedia-cover-3.png",
+		"/expedia-cover-2.png",
+		"/expedia-cover-1.png",
+	],
+	"modal-epam": ["/epam-cover-2.png", "/epam-cover-1.png"],
+	"modal-airgas": [
+		"/airgas-cover-3.png",
+		"/airgas-cover-2.png",
+		"/airgas-cover-1.png",
+	],
+	"modal-coign": [
+		"/coign-cover-3.png",
+		"/coign-cover-2.png",
+		"/coign-cover-1.png",
+	],
+	"modal-ekos": [
+		"/ekos-cover-3.png",
+		"/ekos-cover-2.png",
+		"/ekos-cover-1.png",
+	],
+	"modal-boost": ["/boost-cover-2.png", "/boost-cover-1.png"],
+};
+
+const coverClasses = [
+	"absolute inset-0 w-full h-full object-contain z-[3] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-3 md:group-hover/float:-translate-y-6 group-hover/float:-translate-x-2 md:group-hover/float:-translate-x-3 group-hover/float:scale-105 group-hover/float:-rotate-12",
+	"absolute inset-0 w-full h-full object-contain z-[4] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-1 md:group-hover/float:-translate-y-2 group-hover/float:translate-x-2 md:group-hover/float:translate-x-3 group-hover/float:scale-105 group-hover/float:rotate-12",
+	"absolute inset-0 w-full h-full object-contain z-[5] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-2 md:group-hover/float:-translate-y-4 group-hover/float:scale-110 group-hover/float:rotate-3",
+];
+
+const floatingCards = [
+	{
+		id: "modal-expedia",
+		title: "Scaling Growth through Motion & Systems",
+		category: "Travel & AI",
+	},
+	{
+		id: "modal-epam",
+		title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+		category: "UX & Design Ops",
+	},
+	{
+		id: "modal-airgas",
+		title: "Elevating Design Excellence & Ops at Scale",
+		category: "Design Systems",
+	},
+	{
+		id: "modal-coign",
+		title: 'Architecting an "Unmissable" Experience',
+		category: "Fintech UX",
+	},
+	{
+		id: "modal-ekos",
+		title: "Revolutionizing Production Planning at Scale",
+		category: "Production UX",
+	},
+	{
+		id: "modal-boost",
+		title: "UI Library for B2B payments webapp",
+		category: "Payments UX",
+	},
+];
 ---
+
 <Layout>
-<div class="overflow-x-hidden">
-<div class="relative isolate px-6 pt-24 lg:px-8 min-h-screen flex flex-col justify-center">
-    <div class="mx-auto max-w-6xl pb-16 sm:pb-20 lg:pb-20 w-full">
-        <div class="text-center">
-			<span class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block">Hi, I'm Val Diaz — Lead Product Designer</span>
-            
-            <!-- Contenedor relativo en el texto -->
-            <h1 class="relative text-6xl sm:text-8xl lg:text-8xl tracking-[-0.07em] text-balance">
-                <!-- Imagen trasera -->
-                <img src="/Folder.png" alt="Decoración fondo" class="absolute -bottom-32 left-1/2 -z-10 w-[200px] max-w-none -translate-x-1/2">
-                
-                Engineering Logic. <br>
-Visual Mastery.
-                
-                <!-- Imagen frontal -->
-                <img src="/Folder2.png" alt="Decoración frente" class="absolute -bottom-32 left-1/2 z-9 w-[200px] max-w-none -translate-x-1/2 pointer-events-none">
-            </h1>
-			<h1 class="relative text-6xl sm:text-8xl lg:text-8xl tracking-[-0.07em] text-balance z-10">Lead Mindset.</h1>
-            
-            <p class="mt-16 text-lg text-pretty sm:text-xl/8">I architect scalable systems and high-impact digital products. By bridging engineering logic with premium visual craft, I lead teams to build interfaces that serve a purpose and systems that are built to last.
-            </p>
-            <p class="mt-8 text-lg text-pretty sm:text-xl/8">Currently leading design
-                excellence at EPAM for global brands.</p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="/casos" class="btn-cta">View Projects</a>
-                <a href="/sobre-mi" class="text-sm/6 font-semibold text-black hover:opacity-70 transition-opacity">Learn more about me <span
-                        aria-hidden="true">→</span></a>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="overflow-x-hidden">
+		<CaseStudyModal
+			id="modal-airgas"
+			category="Design Systems, VD & Design Ops"
+			year="2025-Present"
+			client="Air Liquide"
+			role="Design Lead"
+			description="Redesigned, managed and evolved complex UI libraries for a Fortune 500 client, ensuring 100% design-to-dev alignment."
+			title="Elevating Design Excellence & Ops at Scale"
+			images={["/airgas-1.png", "/airgas-2.png", "/airgas-3.png"]}
+			relatedCases={[
+				{
+					id: "modal-epam",
+					title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+					category: "UX & Design Ops",
+				},
+				{
+					id: "modal-expedia",
+					title: "Scaling Growth through Motion & Systems",
+					category: "Travel & AI",
+				},
+				{
+					id: "modal-coign",
+					title: "Architecting an Unmissable Experience",
+					category: "Fintech & Visual Design",
+				},
+			]}
+		/>
+
+		<CaseStudyModal
+			id="modal-epam"
+			category="UX & Design Ops"
+			year="2025"
+			client="EPAM"
+			role="Lead UX Designer"
+			description="I led a strategic discovery initiative to map the end-to-end Epamer Journey, identifying structural bottlenecks and cross-functional dependencies to streamline operations for the LATAM region."
+			title="Optimizing the Bench LATAM Design Operations Lifecycle"
+			images={["/epam-1.png", "/epam-2.png"]}
+			relatedCases={[
+				{
+					id: "modal-expedia",
+					title: "Scaling Growth through Motion & Systems",
+					category: "Travel & AI",
+				},
+				{
+					id: "modal-airgas",
+					title: "Elevating Design Excellence & Ops at Scale",
+					category: "Design Systems, VD & Design Ops",
+				},
+				{
+					id: "modal-ekos",
+					title: "Revolutionizing Production Planning at Scale",
+					category: "Production & Data Architecture",
+				},
+			]}
+		/>
+
+		<CaseStudyModal
+			id="modal-expedia"
+			category="Travel & AI"
+			year="2024-2025"
+			client="Expedia Group"
+			role="Product Designer"
+			description="Leading cross-platform experiences for web and mobile. Contributed to $14.9M GP and 1.48M installs by surpassing annual targets by 148%."
+			title="Scaling Growth through Motion & Systems"
+			images={[
+				"/expedia-1.png",
+				"/expedia-2.png",
+				"/expedia-3.png",
+				"/expedia-4.png",
+				"/expedia-5.png",
+				"/expedia-6.png",
+				"/expedia-7.png",
+				"/expedia-8.png",
+				"/expedia-9.png",
+				"/expedia-10.png",
+				"/expedia-11.png",
+				"/expedia-12.png",
+			]}
+			relatedCases={[
+				{
+					id: "modal-coign",
+					title: "Architecting an Unmissable Experience",
+					category: "Fintech & Visual Design",
+				},
+				{
+					id: "modal-epam",
+					title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+					category: "UX & Design Ops",
+				},
+				{
+					id: "modal-airgas",
+					title: "Elevating Design Excellence & Ops at Scale",
+					category: "Design Systems, VD & Design Ops",
+				},
+			]}
+		/>
+
+		<CaseStudyModal
+			id="modal-coign"
+			category="Fintech & Visual Design"
+			year="2023"
+			client="Coign"
+			role="Product Designer"
+			description="Spearheaded a robust Web App that unified applicant management, earning praise from The Wall Street Journal."
+			title="Architecting an Unmissable Experience"
+			images={[
+				"/coign-1.png",
+				"/coign-2.png",
+				"/coign-3.png",
+				"/coign-4.png",
+				"/coign-5.png",
+				"/coign-6.png",
+				"/coign-7.png",
+				"/coign-8.png",
+			]}
+			relatedCases={[
+				{
+					id: "modal-ekos",
+					title: "Revolutionizing Production Planning at Scale",
+					category: "Production & Data Architecture",
+				},
+				{
+					id: "modal-expedia",
+					title: "Scaling Growth through Motion & Systems",
+					category: "Travel & AI",
+				},
+				{
+					id: "modal-boost",
+					title: "UI Library for B2B payments webapp",
+					category: "Payments & Visual Design",
+				},
+			]}
+		/>
+
+		<CaseStudyModal
+			id="modal-ekos"
+			category="Production & Data Architecture"
+			year="2022"
+			client="Ekos"
+			role="Product Designer"
+			description="Reduced development time by 20% and increased customer satisfaction by 15% by..."
+			title="Revolutionizing Production Planning at Scale"
+			images={[
+				"/ekos-1.png",
+				"/ekos-2.png",
+				"/ekos-3.png",
+				"/ekos-4.png",
+				"/ekos-5.png",
+				"/ekos-6.png",
+				"/ekos-7.png",
+				"/ekos-8.png",
+				"/ekos-9.png",
+			]}
+			relatedCases={[
+				{
+					id: "modal-boost",
+					title: "UI Library for B2B payments webapp",
+					category: "Payments & Visual Design",
+				},
+				{
+					id: "modal-coign",
+					title: "Architecting an Unmissable Experience",
+					category: "Fintech & Visual Design",
+				},
+				{
+					id: "modal-epam",
+					title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+					category: "UX & Design Ops",
+				},
+			]}
+		/>
+
+		<CaseStudyModal
+			id="modal-boost"
+			category="Payments & Visual Design"
+			year="2021"
+			client="Boost"
+			role="Visual Designer"
+			description="Conducting an extensive audit and establishing a UI Library proved instrumental for our design team, fostering the ability to suggest and craft consistently cohesive interfaces. This initiative significantly diminished the time and effort invested in each project. The positive impact extended to our development team, who noted appreciable time savings through the reuse of components and streamlining the creation of interfaces we were designing."
+			title="UI Library for B2B payments webapp"
+			images={["/boost-1.png", "/boost-2.png", "/boost-3.png"]}
+			relatedCases={[
+				{
+					id: "modal-airgas",
+					title: "Elevating Design Excellence & Ops at Scale",
+					category: "Design Systems, VD & Design Ops",
+				},
+				{
+					id: "modal-ekos",
+					title: "Revolutionizing Production Planning at Scale",
+					category: "Production & Data Architecture",
+				},
+				{
+					id: "modal-expedia",
+					title: "Scaling Growth through Motion & Systems",
+					category: "Travel & AI",
+				},
+			]}
+		/>
+
+		<div
+			class="relative isolate px-6 pt-24 lg:px-8 min-h-screen flex flex-col justify-center bg-white"
+		>
+			<div class="mx-auto max-w-6xl pb-16 sm:pb-20 lg:pb-20 w-full">
+				<div class="text-center">
+					<span
+						class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block"
+						>Hi, I'm Val Diaz — Lead Product Designer</span
+					>
+
+					<!-- Contenedor relativo en el texto -->
+					<h1
+						class="relative text-6xl sm:text-8xl lg:text-8xl tracking-[-0.07em] text-balance"
+					>
+						<!-- Imagen trasera -->
+						<img
+							src="/Folder.png"
+							alt="Decoración fondo"
+							class="absolute -bottom-28 left-1/2 -z-10 w-[200px] max-w-none -translate-x-1/2"
+						/>
+
+						Engineering Logic. <br />
+						<span
+							class="font-handwriting tracking-normal text-brand"
+							>Visual Mastery.</span
+						>
+
+						<!-- Imagen frontal -->
+						<img
+							src="/Folder2.png"
+							alt="Decoración frente"
+							class="absolute -bottom-28 left-1/2 z-9 w-[200px] max-w-none -translate-x-1/2 pointer-events-none"
+						/>
+					</h1>
+					<h1
+						class="relative text-6xl sm:text-8xl lg:text-8xl tracking-[-0.07em] text-balance z-10"
+					>
+						Lead Mindset.
+					</h1>
+
+					<p class="mt-16 text-lg text-pretty sm:text-xl/8">
+						I architect scalable systems and high-impact digital
+						products. By bridging engineering logic with premium
+						visual craft, I lead teams to build interfaces that
+						serve a purpose and systems that are built to last.
+					</p>
+					<p class="mt-8 text-lg text-pretty sm:text-xl/8">
+						Currently leading design excellence at EPAM for global
+						brands.
+					</p>
+					<div class="mt-10 flex items-center justify-center gap-x-6">
+						<a href="/casos" class="btn-cta">View Projects</a>
+						<a
+							href="/sobre-mi"
+							class="text-sm/6 font-semibold text-black hover:opacity-70 transition-opacity"
+							>Learn more about me <span aria-hidden="true"
+								>→</span
+							></a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div class="py-24 sm:py-32 bg-brand">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl lg:text-center">
+					<img
+						src="/pin.png"
+						alt="Hand with a pencil"
+						class="w-16 sm:w-24 mx-auto mb-6 object-contain"
+					/>
+
 					<h2
-						class="mt-2 text-5xl tracking-[-0.07em] text-pretty sm:text-6xl lg:text-balance">
-						My Core Pillars</h2>
+						class="mt-2 text-5xl tracking-[-0.07em] text-pretty sm:text-6xl lg:text-balance"
+					>
+						My Core Pillars
+					</h2>
 					<p
-						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8">
-						Driving product success by bridging the gap between design and engineering through robust systems,
-						strategic thinking, and collaborative leadership.
+						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8"
+					>
+						Driving product success by bridging the gap between
+						design and engineering through robust systems, strategic
+						thinking, and collaborative leadership.
 					</p>
 				</div>
-				<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-					<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+				<div
+					class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+				>
+					<dl
+						class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16"
+					>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+										></path>
 									</svg>
 								</div>
 								Scalable Design Systems & Ops
 							</dt>
 							<dd class="mt-2 text-base/7">
-								I architect and maintain robust design languages that bridge the gap between design and code. From auditing extensive Figma libraries to defining global standards, I ensure consistency and efficiency at every scale.
+								I architect and maintain robust design languages
+								that bridge the gap between design and code.
+								From auditing extensive Figma libraries to
+								defining global standards, I ensure consistency
+								and efficiency at every scale.
 							</dd>
 						</div>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+										></path>
 									</svg>
 								</div>
 								Engineering-Driven UX Strategy
 							</dt>
 							<dd class="mt-2 text-base/7">
-								With a background in Computer Engineering, I approach UX with a logic-first mindset. I design high-fidelity solutions that are not only visually premium but technically feasible and aligned with business goals.
+								With a background in Computer Engineering, I
+								approach UX with a logic-first mindset. I design
+								high-fidelity solutions that are not only
+								visually premium but technically feasible and
+								aligned with business goals.
 							</dd>
 						</div>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
+										></path>
 									</svg>
 								</div>
 								Mentorship & Team Leadership
 							</dt>
 							<dd class="mt-2 text-base/7">
-								Leading is about empowering others. I have mentored emerging talent and led cross-functional teams, ensuring design quality through rigorous reviews and established workflows that foster excellence, including leading design quality for teams of up to 5 designers.
+								Leading is about empowering others. I have
+								mentored emerging talent and led
+								cross-functional teams, ensuring design quality
+								through rigorous reviews and established
+								workflows that foster excellence, including
+								leading design quality for teams of up to 5
+								designers.
 							</dd>
 						</div>
 					</dl>
 				</div>
 			</div>
 		</div>
-		
-
 
 		<div class="relative isolate py-24 sm:py-32">
 			<div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+				<img
+					src="/pc.png"
+					alt="PC"
+					class="w-16 sm:w-24 mx-auto mb-6 object-contain"
+				/>
+
 				<h2
-					class="mx-auto mt-2 text-center text-5xl tracking-[-0.07em] text-balance sm:text-6xl">
-					Turning Complex Challenges into Seamless Experiences</h2>
-				<p class="mt-6 text-center text-base md:text-lg font-regular mb-16">Explore some of my featured case studies.</p>
+					class="mx-auto mt-2 text-center text-5xl tracking-[-0.07em] text-balance sm:text-6xl"
+				>
+					Turning Complex Challenges into Seamless Experiences
+				</h2>
+				<p
+					class="mt-6 text-center text-base md:text-lg font-regular mb-16"
+				>
+					Explore some of my featured case studies.
+				</p>
 
-				<div class="relative z-10 flex flex-wrap justify-center items-start gap-4 sm:gap-8 lg:gap-10 w-full px-2 sm:px-6">
-					
-					<!-- Card 1: Expedia -->
-					<a href="/scaling-growth" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<div class="relative w-full mb-2 md:mb-3">
-							<img src="/Folder.png" alt="Decoración fondo" class="w-full h-auto object-contain relative z-0">
-							<img src="/expedia-cover-3.png" alt="Expedia Doc 3" class="absolute inset-0 w-full h-full object-contain z-[3] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-3 md:group-hover/float:-translate-y-6 group-hover/float:-translate-x-2 md:group-hover/float:-translate-x-3 group-hover/float:scale-105 group-hover/float:-rotate-12">
-							<img src="/expedia-cover-2.png" alt="Expedia Doc 2" class="absolute inset-0 w-full h-full object-contain z-[4] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-1 md:group-hover/float:-translate-y-2 group-hover/float:translate-x-2 md:group-hover/float:translate-x-3 group-hover/float:scale-105 group-hover/float:rotate-12">
-							<img src="/expedia-cover-1.png" alt="Expedia" class="absolute inset-0 w-full h-full object-contain z-[5] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-2 md:group-hover/float:-translate-y-4 group-hover/float:scale-110 group-hover/float:rotate-3">
-							<img src="/Folder2.png" alt="Decoración frente" class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-300 group-hover/float:scale-105">
-						</div>
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">Scaling Growth through Motion & Systems</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Travel & AI</p>
-					</a>
-
-					<!-- Card 2: EPAM -->
-					<a href="/casos?case=epam" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<img src="/Fullfolder-pink.png" alt="UX & Design Ops" class="w-full h-auto object-contain mb-2 md:mb-3" />
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">Optimizing the Bench LATAM Design Operations Lifecycle</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">UX & Design Ops</p>
-					</a>
-
-					<!-- Card 3: Airgas -->
-					<a href="/casos?case=airgas" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<img src="/Fullfolder-pink.png" alt="Design Systems" class="w-full h-auto object-contain mb-2 md:mb-3" />
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">Elevating Design Excellence & Ops at Scale</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Design Systems</p>
-					</a>
-
-					<!-- Card 4: Coign -->
-					<a href="/casos?case=coign" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<img src="/Fullfolder-pink.png" alt="Fintech UX" class="w-full h-auto object-contain mb-2 md:mb-3" />
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">Architecting an "Unmissable" Experience</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Fintech UX</p>
-					</a>
-
-					<!-- Card 5: Ekos -->
-					<a href="/casos?case=ekos" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<img src="/Fullfolder-pink.png" alt="Production Planning" class="w-full h-auto object-contain mb-2 md:mb-3" />
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">Revolutionizing Production Planning at Scale</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Production UX</p>
-					</a>
-
-					<!-- Card 6: Boost -->
-					<a href="/casos?case=boost" class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float">
-						<img src="/Fullfolder-pink.png" alt="Payments & VD" class="w-full h-auto object-contain mb-2 md:mb-3" />
-						<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">UI Library for B2B payments webapp</h3>
-						<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Payments UX</p>
-					</a>
-
+				<div
+					class="relative z-10 flex flex-wrap justify-center items-start gap-4 sm:gap-8 lg:gap-10 w-full px-2 sm:px-6"
+				>
+					{
+						floatingCards.map((card) => (
+							<div
+								onclick={`document.getElementById('${card.id}').showModal()`}
+								class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float"
+							>
+								<div class="relative w-full mb-2 md:mb-3">
+									<img
+										src="/Folder.png"
+										alt="Decoración fondo"
+										class="w-full h-auto object-contain relative z-0"
+									/>
+									{coverMap[card.id] &&
+										coverMap[card.id].map((src, i) => (
+											<img
+												src={src}
+												alt={`${card.id} cover ${i + 1}`}
+												class={coverClasses[i]}
+											/>
+										))}
+									<img
+										src="/Folder2.png"
+										alt="Decoración frente"
+										class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-300 group-hover/float:scale-105"
+									/>
+								</div>
+								<h3 class="font-sans tracking-normal font-bold text-xs md:text-sm leading-tight transition-colors">
+									{card.title}
+								</h3>
+								<p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">
+									{card.category}
+								</p>
+							</div>
+						))
+					}
 				</div>
-
 			</div>
 		</div>
 
-
-		
-
-<div class="py-24 sm:py-32 bg-black">
+		<div class="py-24 sm:py-32 bg-black">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mx-auto max-w-2xl lg:text-center">
+					<img
+						src="/mano.png"
+						alt="Hand with a pencil"
+						class="w-16 sm:w-24 mx-auto mb-6 object-contain"
+					/>
+
 					<h2
-						class="mt-2 text-5xl tracking-[-0.07em] text-pretty sm:text-6xl lg:text-balance">
-						Services</h2>
+						class="mt-2 text-5xl tracking-[-0.07em] text-pretty sm:text-6xl lg:text-balance"
+					>
+						Services
+					</h2>
 					<p
-						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8">
-						Leveraging engineering logic and premium visual craft to solve complex product challenges. I
-						help teams scale through robust design systems, strategic leadership, and efficient workflows.
+						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8"
+					>
+						Leveraging engineering logic and premium visual craft to
+						solve complex product challenges. I help teams scale
+						through robust design systems, strategic leadership, and
+						efficient workflows.
 					</p>
 				</div>
-				<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-					<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+				<div
+					class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+				>
+					<dl
+						class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16"
+					>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-										aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+										></path>
 									</svg>
 								</div>
 								Design Systems & Scalability
 							</dt>
 							<dd class="mt-2 text-base/7">
 								<ul class="list-disc pl-5 space-y-2">
-									<li><strong>Audit & Strategy:</strong> I conduct deep inventories of existing Figma
-										libraries to identify inconsistencies and technical debt.</li>
-									<li><strong>System Architecture:</strong> Building and migrating robust, multi-brand
-										design languages that ensure consistency across Web, iOS, and Android.</li>
-									<li><strong>Documentation & Handoff:</strong> Creating clear governance and
-										workflows that bridge the gap between design and engineering.</li>
+									<li>
+										<strong>Audit & Strategy:</strong> I conduct
+										deep inventories of existing Figma libraries
+										to identify inconsistencies and technical
+										debt.
+									</li>
+									<li>
+										<strong>System Architecture:</strong> Building
+										and migrating robust, multi-brand design languages
+										that ensure consistency across Web, iOS, and
+										Android.
+									</li>
+									<li>
+										<strong>Documentation & Handoff:</strong
+										> Creating clear governance and workflows
+										that bridge the gap between design and engineering.
+									</li>
 								</ul>
 							</dd>
 						</div>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-										aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+										></path>
 									</svg>
 								</div>
 								Strategic Visual & Product Design
 							</dt>
 							<dd class="mt-2 text-base/7">
 								<ul class="list-disc pl-5 space-y-2">
-									<li><strong>High-Fidelity Craft:</strong> Transforming complex business requirements
-										into premium, polished interfaces that align with brand identity.</li>
-									<li><strong>Prototyping & Motion:</strong> Using Lottie and advanced
-										micro-interactions to enhance user engagement and define motion standards.</li>
-									<li><strong>UX/UI Inventory:</strong> Streamlining digital products through
-										systematic audits and information architecture improvements.</li>
+									<li>
+										<strong>High-Fidelity Craft:</strong> Transforming
+										complex business requirements into premium,
+										polished interfaces that align with brand
+										identity.
+									</li>
+									<li>
+										<strong>Prototyping & Motion:</strong> Using
+										Lottie and advanced micro-interactions to
+										enhance user engagement and define motion
+										standards.
+									</li>
+									<li>
+										<strong>UX/UI Inventory:</strong> Streamlining
+										digital products through systematic audits
+										and information architecture improvements.
+									</li>
 								</ul>
 							</dd>
 						</div>
 						<div class="flex flex-col">
 							<dt class="text-3xl">
-								<div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]">
-									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-										aria-hidden="true" class="size-6 text-black">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+								<div
+									class="mb-4 flex size-10 items-center justify-center rounded-lg bg-[var(--color-icon-bg)]"
+								>
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.5"
+										aria-hidden="true"
+										class="size-6 text-black"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
+										></path>
 									</svg>
 								</div>
 								Design Ops & Leadership
 							</dt>
 							<dd class="mt-2 text-base/7">
 								<ul class="list-disc pl-5 space-y-2">
-									<li><strong>Team Governance:</strong> Establishing internal frameworks and best
-										practices to improve collaboration and output quality.</li>
-									<li><strong>Mentorship:</strong> Guiding designers through career development,
-										technical workshops, and rigorous design reviews.</li>
-									<li><strong>Stakeholder Management:</strong> Articulating design decisions to
-										clients and engineering teams to ensure project alignment and success.</li>
+									<li>
+										<strong>Team Governance:</strong> Establishing
+										internal frameworks and best practices to
+										improve collaboration and output quality.
+									</li>
+									<li>
+										<strong>Mentorship:</strong> Guiding designers
+										through career development, technical workshops,
+										and rigorous design reviews.
+									</li>
+									<li>
+										<strong>Stakeholder Management:</strong> Articulating
+										design decisions to clients and engineering
+										teams to ensure project alignment and success.
+									</li>
 								</ul>
 							</dd>
 						</div>
@@ -244,182 +683,347 @@ Visual Mastery.
 			</div>
 		</div>
 
-
-
-		<section id="testimonials-section" class="relative isolate py-24 sm:py-32">
+		<section
+			id="testimonials-section"
+			class="relative isolate py-24 sm:py-32"
+		>
 			<!-- Elementos de fondo para que el efecto glass sea visible -->
-			<div class="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden pointer-events-none">
-				<div class="w-[40rem] h-[40rem] rounded-full bg-brand/10 blur-[100px] absolute -left-20 top-20"></div>
-				<div class="w-[30rem] h-[30rem] rounded-full bg-blue-400/10 blur-[100px] absolute right-0 bottom-20"></div>
+			<div
+				class="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden pointer-events-none"
+			>
+				<div
+					class="w-[40rem] h-[40rem] rounded-full bg-brand/10 blur-[100px] absolute -left-20 top-20"
+				>
+				</div>
+				<div
+					class="w-[30rem] h-[30rem] rounded-full bg-blue-400/10 blur-[100px] absolute right-0 bottom-20"
+				>
+				</div>
 			</div>
 
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<div class="mb-20 text-center">
-					<img src="/megafono.png" alt="Megaphone" class="w-24 sm:w-50 mx-auto mb-6 object-contain" />
+					<img
+						src="/megafono.png"
+						alt="Megaphone icon"
+						class="w-16 sm:w-24 mx-auto mb-6 object-contain"
+					/>
 					<h2
-						class="mx-auto mt-2 max-w-lg text-center text-5xl tracking-[-0.07em] text-balance sm:text-6xl">
-						What people are saying</h2>
+						class="mx-auto mt-2 max-w-lg text-center text-5xl tracking-[-0.07em] text-balance sm:text-6xl"
+					>
+						What people are saying
+					</h2>
 					<p
-						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8">
-						High-impact feedback from leaders across top technology teams.</p>
+						class="mx-auto mt-6 max-w-2xl text-center text-lg text-pretty sm:text-xl/8"
+					>
+						High-impact feedback from leaders across top technology
+						teams.
+					</p>
 				</div>
 			</div>
 
 			<div class="mt-10 flex flex-col gap-8 w-full">
-				<div id="scroll-row-1" class="flex gap-8 w-max will-change-transform items-stretch"
-					style="transform: translateX(-15%);">
+				<div
+					id="scroll-row-1"
+					class="flex gap-8 w-max will-change-transform items-stretch"
+					style="transform: translateX(-15%);"
+				>
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>“Outstanding contributions. Valentina’s ability to <strong>quickly understand project
-									requirements,</strong> combined with her effective communication skills, ensures
-								<strong>smooth collaboration</strong> and timely delivery of <strong>high-quality
-									work</strong>”
+							<p>
+								“Outstanding contributions. Valentina’s ability
+								to <strong
+									>quickly understand project requirements,</strong
+								> combined with her effective communication skills,
+								ensures
+								<strong>smooth collaboration</strong> and timely delivery
+								of <strong>high-quality work</strong>”
 							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/expedia-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Francisco Salas</div>
-								<div class="text-sm text-gray-600">Project Manager, Expedia Group</div>
+								<div class="font-bold text-gray-950">
+									Francisco Salas
+								</div>
+								<div class="text-sm text-gray-600">
+									Project Manager, Expedia Group
+								</div>
 							</div>
 						</figcaption>
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>"Working with Val over the course of 2024 has personally been a highlight for me. She is
-								<strong>proactive and forward thinking.</strong> She has a <strong>growth
-									mindset</strong> and is an excellent communicator. I’ve seen her skills advance and
-								am looking forward to working with her more. Her visual skills are top notch, but I also
-								think she has a <strong>great creative mind</strong> and is willing to <strong>push into
-									new spaces.</strong> This is one of the top behaviors I appreciate in any designer.
-								It is a great combination..."
+							<p>
+								"Working with Val over the course of 2024 has
+								personally been a highlight for me. She is
+								<strong>proactive and forward thinking.</strong> She
+								has a <strong>growth mindset</strong> and is an excellent
+								communicator. I’ve seen her skills advance and am
+								looking forward to working with her more. Her visual
+								skills are top notch, but I also think she has a <strong
+									>great creative mind</strong
+								> and is willing to <strong
+									>push into new spaces.</strong
+								> This is one of the top behaviors I appreciate in
+								any designer. It is a great combination..."
 							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/expedia-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Scott Noblit</div>
-								<div class="text-sm text-gray-600">Director of UX, Expedia Group</div>
+								<div class="font-bold text-gray-950">
+									Scott Noblit
+								</div>
+								<div class="text-sm text-gray-600">
+									Director of UX, Expedia Group
+								</div>
 							</div>
 						</figcaption>
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>"Valentina’s combination of technical skills, rapid learning ability, and excellent
-								communication makes her an asset to any team. Her contribution goes beyond individual
-								responsibilities, <strong>enhancing team dynamics</strong> and project outcomes. Her
-								versatility as a designer is exceptional, and her ability to <strong>articulate ideas
-									clearly</strong> while engaging with <strong>diverse teams</strong> has been a major
-								factor in the positive feedback received on all projects she was involved in."</p>
+							<p>
+								"Valentina’s combination of technical skills,
+								rapid learning ability, and excellent
+								communication makes her an asset to any team.
+								Her contribution goes beyond individual
+								responsibilities, <strong
+									>enhancing team dynamics</strong
+								> and project outcomes. Her versatility as a designer
+								is exceptional, and her ability to <strong
+									>articulate ideas clearly</strong
+								> while engaging with <strong
+									>diverse teams</strong
+								> has been a major factor in the positive feedback
+								received on all projects she was involved in."
+							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/endava-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/endava-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Mariana Machado</div>
-								<div class="text-sm text-gray-600">Head of Creative Services, Endava</div>
+								<div class="font-bold text-gray-950">
+									Mariana Machado
+								</div>
+								<div class="text-sm text-gray-600">
+									Head of Creative Services, Endava
+								</div>
 							</div>
 						</figcaption>
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>“Outstanding contributions. Valentina’s ability to <strong>quickly understand project
-									requirements,</strong> combined with her effective communication skills, ensures
-								<strong>smooth collaboration</strong> and timely delivery of <strong>high-quality
-									work</strong>”
+							<p>
+								“Outstanding contributions. Valentina’s ability
+								to <strong
+									>quickly understand project requirements,</strong
+								> combined with her effective communication skills,
+								ensures
+								<strong>smooth collaboration</strong> and timely delivery
+								of <strong>high-quality work</strong>”
 							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/expedia-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/expedia-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Francisco Salas</div>
-								<div class="text-sm text-gray-600">Project Manager, Expedia Group</div>
+								<div class="font-bold text-gray-950">
+									Francisco Salas
+								</div>
+								<div class="text-sm text-gray-600">
+									Project Manager, Expedia Group
+								</div>
 							</div>
 						</figcaption>
 					</div>
 				</div>
 
-				<div id="scroll-row-2" class="flex gap-8 w-max will-change-transform items-stretch"
-					style="transform: translateX(5%);">
+				<div
+					id="scroll-row-2"
+					class="flex gap-8 w-max will-change-transform items-stretch"
+					style="transform: translateX(5%);"
+				>
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>"Valentina <strong>effectively integrated AI tools to streamline workflows, significantly
-									increasing team efficiency</strong>. She provides <strong>expert guidance and
-									exceptional support</strong>, enabling others to ramp up fast on complex projects
-								like Airgas. <strong>Her leadership made a measurable difference in our team’s velocity
-									and efficiency. </strong>Her commitment to aligning top-notch design with solid
-								systems is truly inspiring."</p>
+							<p>
+								"Valentina <strong
+									>effectively integrated AI tools to
+									streamline workflows, significantly
+									increasing team efficiency</strong
+								>. She provides <strong
+									>expert guidance and exceptional support</strong
+								>, enabling others to ramp up fast on complex
+								projects like Airgas. <strong
+									>Her leadership made a measurable difference
+									in our team’s velocity and efficiency.
+								</strong>Her commitment to aligning top-notch
+								design with solid systems is truly inspiring."
+							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/EPAM-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/EPAM-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Maria Lespi</div>
-								<div class="text-sm text-gray-600">Product Designer (Direct report at project), EPAM
+								<div class="font-bold text-gray-950">
+									Maria Lespi
+								</div>
+								<div class="text-sm text-gray-600">
+									Product Designer (Direct report at project),
+									EPAM
 								</div>
 							</div>
 						</figcaption>
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>"Valentina <strong>quickly took charge</strong>, establishing a <strong>design governance
-									process</strong> and managing the <strong>design system</strong> to keep the team
-								running smoothly. She is a <strong>proactive leader</strong> who sets <strong>high
-									standards</strong> for visual design and ensures alignment across complex projects."
+							<p>
+								"Valentina <strong>quickly took charge</strong>,
+								establishing a <strong
+									>design governance process</strong
+								> and managing the <strong>design system</strong
+								> to keep the team running smoothly. She is a <strong
+									>proactive leader</strong
+								> who sets <strong>high standards</strong> for visual
+								design and ensures alignment across complex projects."
 							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/EPAM-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/EPAM-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Ashish Rai</div>
-								<div class="text-sm text-gray-600">Director Experience Consulting, EPAM</div>
-							</div>
-						</figcaption>
-					</div>
-
-					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
-						<blockquote class="text-lg/7 mb-10">
-							<p>"Valentina is a <strong>true role model</strong> for both technical quality and positive
-								collaboration. Her biggest strength is making the <strong>design handoff completely
-									painless for engineers;</strong> her files are so perfectly organized that they are
-								a huge time saver for the development team. Beyond execution, her patience in sharing
-								knowledge has made the whole design team <strong>stronger and more consistent.</strong>"
-							</p>
-						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/EPAM-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
-							<div>
-								<div class="font-bold text-gray-950">Victor Urias</div>
-								<div class="text-sm text-gray-600">Product Designer (Direct report at project), EPAM
+								<div class="font-bold text-gray-950">
+									Ashish Rai
+								</div>
+								<div class="text-sm text-gray-600">
+									Director Experience Consulting, EPAM
 								</div>
 							</div>
 						</figcaption>
 					</div>
 
 					<div
-						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60">
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
 						<blockquote class="text-lg/7 mb-10">
-							<p>"Val is key to keeping a <strong>Design System moving in the right direction.</strong>
-								She has a strong understanding of business and scalability, making thoughtful decisions
-								that support <strong>long-term consistency.</strong> What sets her apart is how she
-								manages <strong>high-pressure situations:</strong> she stays calm, takes ownership (even
-								stepping in to lead the DS responsibilities when needed), and ensures the project
-								continues <strong>without disruption.</strong>"</p>
+							<p>
+								"Valentina is a <strong>true role model</strong> for
+								both technical quality and positive collaboration.
+								Her biggest strength is making the <strong
+									>design handoff completely painless for
+									engineers;</strong
+								> her files are so perfectly organized that they are
+								a huge time saver for the development team. Beyond
+								execution, her patience in sharing knowledge has made
+								the whole design team <strong
+									>stronger and more consistent.</strong
+								>"
+							</p>
 						</blockquote>
-						<figcaption class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto">
-							<img src="/EPAM-logo.png" alt="" class="size-12 rounded-full bg-gray-50 object-cover" />
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/EPAM-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
 							<div>
-								<div class="font-bold text-gray-950">Areli Peza</div>
-								<div class="text-sm text-gray-600">Product Designer (Direct report at project), EPAM
+								<div class="font-bold text-gray-950">
+									Victor Urias
+								</div>
+								<div class="text-sm text-gray-600">
+									Product Designer (Direct report at project),
+									EPAM
+								</div>
+							</div>
+						</figcaption>
+					</div>
+
+					<div
+						class="w-[85vw] sm:w-[28rem] shrink-0 flex flex-col justify-between rounded-3xl bg-white/40 backdrop-blur-lg p-10 shadow-xl shadow-slate-200/50 ring-1 ring-white/60"
+					>
+						<blockquote class="text-lg/7 mb-10">
+							<p>
+								"Val is key to keeping a <strong
+									>Design System moving in the right
+									direction.</strong
+								>
+								She has a strong understanding of business and scalability,
+								making thoughtful decisions that support <strong
+									>long-term consistency.</strong
+								> What sets her apart is how she manages <strong
+									>high-pressure situations:</strong
+								> she stays calm, takes ownership (even stepping in
+								to lead the DS responsibilities when needed), and
+								ensures the project continues <strong
+									>without disruption.</strong
+								>"
+							</p>
+						</blockquote>
+						<figcaption
+							class="flex items-center gap-x-4 border-t border-gray-100 pt-8 mt-auto"
+						>
+							<img
+								src="/EPAM-logo.png"
+								alt=""
+								class="size-12 rounded-full bg-gray-50 object-cover"
+							/>
+							<div>
+								<div class="font-bold text-gray-950">
+									Areli Peza
+								</div>
+								<div class="text-sm text-gray-600">
+									Product Designer (Direct report at project),
+									EPAM
 								</div>
 							</div>
 						</figcaption>
@@ -427,18 +1031,13 @@ Visual Mastery.
 				</div>
 			</div>
 		</section>
-
-
-		
-
-
 	</div>
 
 	<script is:inline>
-		document.addEventListener('DOMContentLoaded', () => {
-			const section = document.getElementById('testimonials-section');
-			const row1 = document.getElementById('scroll-row-1');
-			const row2 = document.getElementById('scroll-row-2');
+		document.addEventListener("DOMContentLoaded", () => {
+			const section = document.getElementById("testimonials-section");
+			const row1 = document.getElementById("scroll-row-1");
+			const row2 = document.getElementById("scroll-row-2");
 
 			function updateScroll() {
 				if (!section || !row1 || !row2) return;
@@ -449,20 +1048,23 @@ Visual Mastery.
 					row2.style.transform = `translateX(calc(5% - ${offset * 0.2}px))`;
 				}
 			}
-			window.addEventListener('scroll', updateScroll);
+			window.addEventListener("scroll", updateScroll);
 			updateScroll();
 
 			// Case Studies Carousel Logic
 			function updateCarousel() {
-				const carousel = document.getElementById('case-studies-carousel');
+				const carousel = document.getElementById(
+					"case-studies-carousel",
+				);
 				if (!carousel) return;
 				const containerRect = carousel.getBoundingClientRect();
-				const containerCenter = containerRect.left + containerRect.width / 2;
-				const cards = carousel.querySelectorAll('.carousel-card');
+				const containerCenter =
+					containerRect.left + containerRect.width / 2;
+				const cards = carousel.querySelectorAll(".carousel-card");
 				let closestCard = null;
 				let minDistance = Infinity;
 
-				cards.forEach(card => {
+				cards.forEach((card) => {
 					const cardRect = card.getBoundingClientRect();
 					const cardCenter = cardRect.left + cardRect.width / 2;
 					const distance = Math.abs(containerCenter - cardCenter);
@@ -472,24 +1074,23 @@ Visual Mastery.
 					}
 				});
 
-				cards.forEach(card => {
+				cards.forEach((card) => {
 					if (card === closestCard) {
-						card.classList.add('scale-100', 'opacity-100');
-						card.classList.remove('scale-95', 'opacity-80');
+						card.classList.add("scale-100", "opacity-100");
+						card.classList.remove("scale-95", "opacity-80");
 					} else {
-						card.classList.remove('scale-100', 'opacity-100');
-						card.classList.add('scale-95', 'opacity-80');
+						card.classList.remove("scale-100", "opacity-100");
+						card.classList.add("scale-95", "opacity-80");
 					}
 				});
 			}
 
-			const csCarousel = document.getElementById('case-studies-carousel');
+			const csCarousel = document.getElementById("case-studies-carousel");
 			if (csCarousel) {
-				csCarousel.addEventListener('scroll', updateCarousel);
-				window.addEventListener('resize', updateCarousel);
+				csCarousel.addEventListener("scroll", updateCarousel);
+				window.addEventListener("resize", updateCarousel);
 				setTimeout(updateCarousel, 50); // Initial check
 			}
 		});
 	</script>
-</div>
 </Layout>

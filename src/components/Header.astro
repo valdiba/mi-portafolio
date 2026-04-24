@@ -1,3 +1,10 @@
+---
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '/index.html';
+const isCasos = pathname.startsWith('/casos');
+const isSobreMi = pathname.startsWith('/sobre-mi');
+---
+
 <header id="main-header" class="group fixed top-0 z-50 w-full bg-transparent transition-all duration-300">
   <nav aria-label="Global" class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 lg:px-8">
     
@@ -18,9 +25,9 @@
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="/" class="text-sm/6 font-semibold text-black hover:opacity-70 transition-opacity">Home</a>
-      <a href="/casos" class="text-sm/6 font-semibold text-black hover:opacity-70 transition-opacity">Case Studies</a>
-      <a href="/sobre-mi" class="text-sm/6 font-semibold text-black hover:opacity-70 transition-opacity">About Me</a>
+      <a href="/" class={`text-sm/6 font-semibold hover:opacity-70 transition-all ${isHome ? 'text-black underline decoration-brand group-[.bg-brand]:decoration-black decoration-2 underline-offset-4' : 'text-slate-500'}`}>Home</a>
+      <a href="/casos" class={`text-sm/6 font-semibold hover:opacity-70 transition-all ${isCasos ? 'text-black underline decoration-brand group-[.bg-brand]:decoration-black decoration-2 underline-offset-4' : 'text-slate-500'}`}>Case Studies</a>
+      <a href="/sobre-mi" class={`text-sm/6 font-semibold hover:opacity-70 transition-all ${isSobreMi ? 'text-black underline decoration-brand group-[.bg-brand]:decoration-black decoration-2 underline-offset-4' : 'text-slate-500'}`}>About Me</a>
     </div>
   </nav>
 
@@ -45,9 +52,9 @@
           <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-100">
               <div class="space-y-2 py-6">
-                <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Inicio</a>
-                <a href="/casos" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Casos de estudio</a>
-                <a href="/sobre-mi" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-slate-900 hover:bg-gray-50">Sobre mí</a>
+                <a href="/" class={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 transition-all ${isHome ? 'text-slate-900 bg-gray-50 underline decoration-brand decoration-2 underline-offset-4' : 'text-slate-500'}`}>Inicio</a>
+                <a href="/casos" class={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 transition-all ${isCasos ? 'text-slate-900 bg-gray-50 underline decoration-brand decoration-2 underline-offset-4' : 'text-slate-500'}`}>Casos de estudio</a>
+                <a href="/sobre-mi" class={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 transition-all ${isSobreMi ? 'text-slate-900 bg-gray-50 underline decoration-brand decoration-2 underline-offset-4' : 'text-slate-500'}`}>Sobre mí</a>
               </div>
             </div>
           </div>
@@ -65,10 +72,10 @@
     window.addEventListener('scroll', () => {
       if (window.scrollY > 20) {
         header.classList.remove('bg-transparent');
-        header.classList.add('bg-brand', 'shadow-md');
+        header.classList.add('bg-brand');
       } else {
         header.classList.add('bg-transparent');
-        header.classList.remove('bg-brand', 'shadow-md');
+        header.classList.remove('bg-brand');
       }
     });
   });

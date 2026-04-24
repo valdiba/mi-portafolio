@@ -1,276 +1,419 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CaseStudyModal from '../components/CaseStudyModal.astro';
+import Layout from "../layouts/Layout.astro";
+import CaseStudyModal from "../components/CaseStudyModal.astro";
 
 const caseStudies = [
   {
-    image: '/DestinationDecoderExp.svg',
-    imageBg: 'bg-slate-100',
-    date: '2024-2025',
-    tags: 'Travel & AI',
-    title: 'Scaling Growth through Motion & Systems',
+    image: "/DestinationDecoderExp.svg",
+    imageBg: "bg-slate-100",
+    date: "2024-2025",
+    tags: "Travel & AI",
+    title: "Scaling Growth through Motion & Systems",
     onClick: "document.getElementById('modal-expedia').showModal()",
-    description: 'Leading cross-platform experiences for web and mobile. Contributed to $14.9M GP and 1.48M installs by surpassing annual targets by 148%.',
-    logo: '/expedia-logo.png',
-    company: 'Expedia Group',
-    role: 'Product Designer'
+    description:
+      "Leading cross-platform experiences for web and mobile. Contributed to $14.9M GP and 1.48M installs by surpassing annual targets by 148%.",
+    logo: "/expedia-logo.png",
+    company: "Travel",
+    role: "Product Designer"
   },
   {
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop',
-    imageBg: 'bg-slate-100',
-    date: '2025-Present',
-    tags: 'Design Systems, VD & Design Ops',
-    title: 'Elevating Design Excellence & Ops at Scale',
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
+    imageBg: "bg-slate-100",
+    date: "2025-Present",
+    tags: "Design Systems, VD & Design Ops",
+    title: "Elevating Design Excellence & Ops at Scale",
     onClick: "document.getElementById('modal-airgas').showModal()",
-    description: 'Redesigned, managed and evolved complex UI libraries for a Fortune 500 client, ensuring 100% design-to-dev alignment.',
-    logo: '/Air-Liquide-logo.png',
-    company: 'Air Liquide',
-    role: 'Design Lead'
+    description:
+      "Redesigned, managed and evolved complex UI libraries for a Fortune 500 client, ensuring 100% design-to-dev alignment.",
+    logo: "/Air-Liquide-logo.png",
+    company: "Air Liquide",
+    role: "Design Lead",
   },
   {
-    image: '/Coign.png',
-    imageBg: 'bg-slate-900',
-    imageExtra: 'object-left-top',
-    date: '2025',
-    tags: 'UX & Design Ops',
-    title: 'Optimizing the Bench LATAM Design Operations Lifecycle',
+    image: "/Coign.png",
+    imageBg: "bg-slate-900",
+    imageExtra: "object-left-top",
+    date: "2025",
+    tags: "UX & Design Ops",
+    title: "Optimizing the Bench LATAM Design Operations Lifecycle",
     onClick: "document.getElementById('modal-epam').showModal()",
-    description: 'I led a strategic discovery initiative to map the end-to-end Epamer Journey, identifying structural bottlenecks and cross-functional dependencies to streamline operations for the LATAM region.',
-    logo: '/EPAM-logo.png',
-    company: 'EPAM',
-    role: 'Lead UX Designer'
+    description:
+      "I led a strategic discovery initiative to map the end-to-end Epamer Journey, identifying structural bottlenecks and cross-functional dependencies to streamline operations for the LATAM region.",
+    logo: "/EPAM-logo.png",
+    company: "EPAM",
+    role: "Lead UX Designer",
   },
   {
-    image: '/Coign.png',
-    imageBg: 'bg-slate-100',
-    date: '2023',
-    tags: 'Fintech & Visual Design',
+    image: "/Coign.png",
+    imageBg: "bg-slate-100",
+    date: "2023",
+    tags: "Fintech & Visual Design",
     title: 'Architecting an "Unmissable" Experience',
     onClick: "document.getElementById('modal-coign').showModal()",
-    description: 'Spearheaded a robust Web App that unified applicant management, earning praise from The Wall Street Journal.',
-    logo: '/coign-logo.png',
-    company: 'Coign',
-    role: 'Product Designer'
+    description:
+      "Spearheaded a robust Web App that unified applicant management, earning praise from The Wall Street Journal.",
+    logo: "/coign-logo.png",
+    company: "Coign",
+    role: "Product Designer",
   },
   {
-    image: '/DestinationDecoderExp.svg',
-    imageBg: 'bg-slate-100',
-    date: '2022',
-    tags: 'Production & Data Architecture',
-    title: 'Revolutionizing Production Planning at Scale',
+    image: "/DestinationDecoderExp.svg",
+    imageBg: "bg-slate-100",
+    date: "2022",
+    tags: "Production & Data Architecture",
+    title: "Revolutionizing Production Planning at Scale",
     onClick: "document.getElementById('modal-ekos').showModal()",
-    description: 'Reduced development time by 20% and increased customer satisfaction by 15% by...',
-    logo: '/Ekos-logo.webp',
-    company: 'Ekos',
-    role: 'Product Designer'
+    description:
+      "Reduced development time by 20% and increased customer satisfaction by 15% by...",
+    logo: "/Ekos-logo.webp",
+    company: "Ekos",
+    role: "Product Designer",
   },
   {
-    image: '/DestinationDecoderExp.svg',
-    imageBg: 'bg-slate-100',
-    date: '2021',
-    tags: 'Payments & Visual Design',
-    title: 'UI Library for B2B payments webapp',
+    image: "/DestinationDecoderExp.svg",
+    imageBg: "bg-slate-100",
+    date: "2021",
+    tags: "Payments & Visual Design",
+    title: "UI Library for B2B payments webapp",
     onClick: "document.getElementById('modal-boost').showModal()",
-    description: 'Conducting an extensive audit and establishing a UI Library proved instrumental for our design team, fostering the ability to suggest and craft consistently cohesive interfaces. This initiative significantly diminished the time and effort invested in each project. The positive impact extended to our development team, who noted appreciable time savings through the reuse of components and streamlining the creation of interfaces we were designing.',
-    logo: '/boost-logo.png',
-    company: 'Boost',
-    role: 'Visual Designer'
-  }
+    description:
+      "Conducting an extensive audit and establishing a UI Library proved instrumental for our design team, fostering the ability to suggest and craft consistently cohesive interfaces. This initiative significantly diminished the time and effort invested in each project. The positive impact extended to our development team, who noted appreciable time savings through the reuse of components and streamlining the creation of interfaces we were designing.",
+    logo: "/boost-logo.png",
+    company: "Boost",
+    role: "Visual Designer",
+  },
+];
+
+const coverMap: Record<string, string[]> = {
+  "modal-expedia": [
+    "/expedia-cover-3.png",
+    "/expedia-cover-2.png",
+    "/expedia-cover-1.png",
+  ],
+  "modal-epam": ["/epam-cover-2.png", "/epam-cover-1.png"],
+  "modal-airgas": [
+    "/airgas-cover-3.png",
+    "/airgas-cover-2.png",
+    "/airgas-cover-1.png",
+  ],
+  "modal-coign": [
+    "/coign-cover-3.png",
+    "/coign-cover-2.png",
+    "/coign-cover-1.png",
+  ],
+  "modal-ekos": ["/ekos-cover-3.png", "/ekos-cover-2.png", "/ekos-cover-1.png"],
+  "modal-boost": ["/boost-cover-2.png", "/boost-cover-1.png"],
+};
+
+const coverClasses = [
+  "absolute inset-0 w-full h-full object-contain z-[3] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-3 md:group-hover/float:-translate-y-6 group-hover/float:-translate-x-2 md:group-hover/float:-translate-x-3 group-hover/float:scale-105 group-hover/float:-rotate-12",
+  "absolute inset-0 w-full h-full object-contain z-[4] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-1 md:group-hover/float:-translate-y-2 group-hover/float:translate-x-2 md:group-hover/float:translate-x-3 group-hover/float:scale-105 group-hover/float:rotate-12",
+  "absolute inset-0 w-full h-full object-contain z-[5] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-2 md:group-hover/float:-translate-y-4 group-hover/float:scale-110 group-hover/float:rotate-3",
+];
+
+const floatingCards = [
+  {
+    id: "modal-expedia",
+    title: "Scaling Growth through Motion & Systems",
+    category: "Travel & AI",
+  },
+  {
+    id: "modal-epam",
+    title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+    category: "UX & Design Ops",
+  },
+  {
+    id: "modal-airgas",
+    title: "Elevating Design Excellence & Ops at Scale",
+    category: "Design Systems & Gas",
+  },
+  {
+    id: "modal-coign",
+    title: 'Architecting an "Unmissable" Experience',
+    category: "Fintech UX",
+  },
+  {
+    id: "modal-ekos",
+    title: "Revolutionizing Production Planning at Scale",
+    category: "Production UX",
+  },
+  {
+    id: "modal-boost",
+    title: "UI Library for B2B payments webapp",
+    category: "Payments UX",
+  },
 ];
 ---
 
-<Layout>
-
-  <CaseStudyModal 
+<Layout class="bg-white">
+  <CaseStudyModal
     id="modal-airgas"
     category="Design Systems, VD & Design Ops"
-    title="Elevating Design Excellence & Ops at Scale'"
-    images={[
-      '/airgas-1.png',
-      '/airgas-2.png',
-      '/airgas-3.png'
-    ]}
+    year="2025-Present"
+    client="Air Liquide"
+    role="Design Lead"
+    description="Redesigned, managed and evolved complex UI libraries for a Fortune 500 client, ensuring 100% design-to-dev alignment."
+    title="Elevating Design Excellence & Ops at Scale"
+    images={["/airgas-1.png", "/airgas-2.png", "/airgas-3.png"]}
     relatedCases={[
-      { id: 'modal-epam', title: 'Optimizing the Bench LATAM Design Operations Lifecycle', category: 'UX & Design Ops' },
-      { id: 'modal-expedia', title: 'Scaling Growth through Motion & Systems', category: 'Travel & AI' }
+      {
+        id: "modal-epam",
+        title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+        category: "UX & Design Ops",
+      },
+      {
+        id: "modal-expedia",
+        title: "Scaling Growth through Motion & Systems",
+        category: "Travel & AI",
+      },
+      {
+        id: "modal-coign",
+        title: "Architecting an Unmissable Experience",
+        category: "Fintech & Visual Design",
+      },
     ]}
   />
 
-  <CaseStudyModal 
+  <CaseStudyModal
     id="modal-epam"
     category="UX & Design Ops"
+    year="2025"
+    client="EPAM"
+    role="Lead UX Designer"
+    description="I led a strategic discovery initiative to map the end-to-end Epamer Journey, identifying structural bottlenecks and cross-functional dependencies to streamline operations for the LATAM region."
     title="Optimizing the Bench LATAM Design Operations Lifecycle"
-    images={[
-      '/epam-1.png',
-      '/epam-2.png'
-    ]}
+    images={["/epam-1.png", "/epam-2.png"]}
     relatedCases={[
-      { id: 'modal-expedia', title: 'Scaling Growth through Motion & Systems', category: 'Travel & AI' },
-      { id: 'modal-airgas', title: 'Elevating Design Excellence & Ops at Scale', category: 'Design Systems, VD & Design Ops' }
+      {
+        id: "modal-expedia",
+        title: "Scaling Growth through Motion & Systems",
+        category: "Travel & AI",
+      },
+      {
+        id: "modal-airgas",
+        title: "Elevating Design Excellence & Ops at Scale",
+        category: "Design Systems, VD & Design Ops",
+      },
+      {
+        id: "modal-ekos",
+        title: "Revolutionizing Production Planning at Scale",
+        category: "Production & Data Architecture",
+      },
     ]}
   />
 
-  <CaseStudyModal 
+  <CaseStudyModal
     id="modal-expedia"
     category="Travel & AI"
+    year="2024-2025"
+    client="Expedia Group"
+    role="Product Designer"
+    description="Leading cross-platform experiences for web and mobile. Contributed to $14.9M GP and 1.48M installs by surpassing annual targets by 148%."
     title="Scaling Growth through Motion & Systems"
     images={[
-      '/expedia-1.png',
-      '/expedia-2.png',
-      '/expedia-3.png',
-      '/expedia-4.png',
-      '/expedia-5.png',
-      '/expedia-6.png',
-      '/expedia-7.png',
-      '/expedia-8.png',
-      '/expedia-9.png',
-      '/expedia-10.png',
-      '/expedia-11.png',
-      '/expedia-12.png'
+      "/expedia-1.png",
+      "/expedia-2.png",
+      "/expedia-3.png",
+      "/expedia-4.png",
+      "/expedia-5.png",
+      "/expedia-6.png",
+      "/expedia-7.png",
+      "/expedia-8.png",
+      "/expedia-9.png",
+      "/expedia-10.png",
+      "/expedia-11.png",
+      "/expedia-12.png",
     ]}
     relatedCases={[
-      { id: 'modal-coign', title: 'Architecting an Unmissable Experience', category: 'Fintech & Visual Design' },
-      { id: 'modal-epam', title: 'Optimizing the Bench LATAM Design Operations Lifecycle', category: 'UX & Design Ops' }
+      {
+        id: "modal-coign",
+        title: "Architecting an Unmissable Experience",
+        category: "Fintech & Visual Design",
+      },
+      {
+        id: "modal-epam",
+        title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+        category: "UX & Design Ops",
+      },
+      {
+        id: "modal-airgas",
+        title: "Elevating Design Excellence & Ops at Scale",
+        category: "Design Systems, VD & Design Ops",
+      },
     ]}
   />
 
-  <CaseStudyModal 
+  <CaseStudyModal
     id="modal-coign"
     category="Fintech & Visual Design"
     title="Architecting an Unmissable Experience"
     images={[
-      '/coign-1.png',
-      '/coign-2.png',
-      '/coign-3.png',
-      '/coign-4.png',
-      '/coign-5.png',
-      '/coign-6.png',
-      '/coign-7.png',
-      '/coign-8.png'
+      "/coign-1.png",
+      "/coign-2.png",
+      "/coign-3.png",
+      "/coign-4.png",
+      "/coign-5.png",
+      "/coign-6.png",
+      "/coign-7.png",
+      "/coign-8.png",
     ]}
     relatedCases={[
-      { id: 'modal-ekos', title: 'Revolutionizing Production Planning at Scale', category: 'Production & Data Architecture' },
-      { id: 'modal-expedia', title: 'Scaling Growth through Motion & Systems', category: 'Travel & AI' }
+      {
+        id: "modal-ekos",
+        title: "Revolutionizing Production Planning at Scale",
+        category: "Production & Data Architecture",
+      },
+      {
+        id: "modal-expedia",
+        title: "Scaling Growth through Motion & Systems",
+        category: "Travel & AI",
+      },
+      {
+        id: "modal-boost",
+        title: "UI Library for B2B payments webapp",
+        category: "Payments & Visual Design",
+      },
     ]}
   />
 
-
-  <CaseStudyModal 
+  <CaseStudyModal
     id="modal-ekos"
     category="Production & Data Architecture"
     title="Revolutionizing Production Planning at Scale"
     images={[
-      '/ekos-1.png',
-      '/ekos-2.png',
-      '/ekos-3.png',
-      '/ekos-4.png',
-      '/ekos-5.png',
-      '/ekos-6.png',
-      '/ekos-7.png',
-      '/ekos-8.png',
-      '/ekos-9.png'
+      "/ekos-1.png",
+      "/ekos-2.png",
+      "/ekos-3.png",
+      "/ekos-4.png",
+      "/ekos-5.png",
+      "/ekos-6.png",
+      "/ekos-7.png",
+      "/ekos-8.png",
+      "/ekos-9.png",
     ]}
     relatedCases={[
-      { id: 'modal-boost', title: 'UI Library for B2B payments webapp', category: 'Payments & Visual Design' },
-      { id: 'modal-coign', title: 'Architecting an Unmissable Experience', category: 'Fintech & Visual Design' }
+      {
+        id: "modal-boost",
+        title: "UI Library for B2B payments webapp",
+        category: "Payments & Visual Design",
+      },
+      {
+        id: "modal-coign",
+        title: "Architecting an Unmissable Experience",
+        category: "Fintech & Visual Design",
+      },
+      {
+        id: "modal-epam",
+        title: "Optimizing the Bench LATAM Design Operations Lifecycle",
+        category: "UX & Design Ops",
+      },
     ]}
   />
 
-  <CaseStudyModal 
+  <CaseStudyModal
     id="modal-boost"
     category="Payments & Visual Design"
     title="UI Library for B2B payments webapp"
-    images={[
-      '/boost-1.png',
-      '/boost-2.png',
-      '/boost-3.png'
-    ]}
+    images={["/boost-1.png", "/boost-2.png", "/boost-3.png"]}
     relatedCases={[
-      { id: 'modal-airgas', title: 'Elevating Design Excellence & Ops at Scale', category: 'Design Systems, VD & Design Ops' },
-      { id: 'modal-ekos', title: 'Revolutionizing Production Planning at Scale', category: 'Production & Data Architecture' }
+      {
+        id: "modal-airgas",
+        title: "Elevating Design Excellence & Ops at Scale",
+        category: "Design Systems, VD & Design Ops",
+      },
+      {
+        id: "modal-ekos",
+        title: "Revolutionizing Production Planning at Scale",
+        category: "Production & Data Architecture",
+      },
+      {
+        id: "modal-expedia",
+        title: "Scaling Growth through Motion & Systems",
+        category: "Travel & AI",
+      },
     ]}
   />
 
   <!-- ========================================== -->
   <!-- NUEVO LAYOUT EXPERIMENTAL (FLOTANTE)       -->
   <!-- ========================================== -->
-  <section class="relative w-full flex flex-col items-center justify-start overflow-hidden pt-24 pb-32">
-    
+  <section
+    class="relative w-full flex flex-col items-center justify-start overflow-hidden pt-24 pb-32 bg-white"
+  >
     <!-- Título Central -->
     <div class="relative z-20 max-w-3xl lg:max-w-4xl text-center px-6 mb-16">
-      <span class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block">Case studies</span>
-      <h2 class="text-4xl md:text-5xl lg:text-7xl tracking-[-0.07em] text-balance text-gray-950">
+      <img
+        src="/pc.png"
+        alt="PC decoration"
+        class="w-16 md:w-24 lg:w-32 mx-auto mb-6 object-contain"
+      />
+      <span
+        class="font-bold tracking-wider uppercase text-brand text-sm mb-4 block"
+        >Case studies</span
+      >
+      <h2
+        class="text-4xl md:text-5xl lg:text-7xl tracking-[-0.07em] text-balance text-gray-950"
+      >
         Turning Complex Challenges into Seamless Experiences
       </h2>
-      <p class="mt-6 text-base md:text-lg text-slate-900 font-regular">Explore some of my featured case studies.</p>
+      <p class="mt-6 text-base md:text-lg text-slate-900 font-regular">
+        Explore some of my featured case studies.
+      </p>
     </div>
 
     <!-- Contenedor de Cards (Una Fila) -->
-    <div class="relative z-10 flex flex-wrap justify-center items-start gap-4 sm:gap-8 lg:gap-10 w-full max-w-7xl px-6">
-
-      <!-- Card 1: Expedia -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-expedia').showModal()">
-        <div class="relative w-full mb-2 md:mb-3">
-          <img src="/Folder.png" alt="Decoración fondo" class="w-full h-auto object-contain relative z-0">
-          <img src="/expedia-cover-3.png" alt="Expedia Doc 3" class="absolute inset-0 w-full h-full object-contain z-[3] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-3 md:group-hover/float:-translate-y-6 group-hover/float:-translate-x-2 md:group-hover/float:-translate-x-3 group-hover/float:scale-105 group-hover/float:-rotate-12">
-          <img src="/expedia-cover-2.png" alt="Expedia Doc 2" class="absolute inset-0 w-full h-full object-contain z-[4] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-1 md:group-hover/float:-translate-y-2 group-hover/float:translate-x-2 md:group-hover/float:translate-x-3 group-hover/float:scale-105 group-hover/float:rotate-12">
-          <img src="/expedia-cover-1.png" alt="Expedia" class="absolute inset-0 w-full h-full object-contain z-[5] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-2 md:group-hover/float:-translate-y-4 group-hover/float:scale-110 group-hover/float:rotate-3">
-          <img src="/Folder2.png" alt="Decoración frente" class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-300 group-hover/float:scale-105">
-        </div>
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">Scaling Growth through Motion & Systems</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Travel & AI</p>
-      </div>
-
-      <!-- Card 2: EPAM -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-epam').showModal()">
-        <img src="/Fullfolder-pink.png" alt="UX & Design Ops" class="w-full h-auto object-contain mb-2 md:mb-3" />
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">Optimizing the Bench LATAM Design Operations Lifecycle</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">UX & Design Ops</p>
-      </div>
-
-      <!-- Card 3: Airgas -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-airgas').showModal()">
-        <img src="/Fullfolder-pink.png" alt="Design Systems" class="w-full h-auto object-contain mb-2 md:mb-3" />
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">Elevating Design Excellence & Ops at Scale</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Design Systems</p>
-      </div>
-
-      <!-- Card 4: Coign -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-coign').showModal()">
-        <img src="/Fullfolder-pink.png" alt="Fintech UX" class="w-full h-auto object-contain mb-2 md:mb-3" />
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">Architecting an "Unmissable" Experience</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Fintech UX</p>
-      </div>
-
-      <!-- Card 5: Ekos -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-ekos').showModal()">
-        <img src="/Fullfolder-pink.png" alt="Production Planning" class="w-full h-auto object-contain mb-2 md:mb-3" />
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">Revolutionizing Production Planning at Scale</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Production UX</p>
-      </div>
-
-      <!-- Card 6: Boost -->
-      <div class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float" onclick="document.getElementById('modal-boost').showModal()">
-        <img src="/Fullfolder-pink.png" alt="Payments & VD" class="w-full h-auto object-contain mb-2 md:mb-3" />
-        <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">UI Library for B2B payments webapp</h3>
-        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">Payments UX</p>
-      </div>
-
+    <div
+      class="relative z-10 flex flex-wrap justify-center items-start gap-4 sm:gap-8 lg:gap-10 w-full max-w-7xl px-6"
+    >
+      {
+        floatingCards.map((card) => (
+          <div
+            class="w-24 md:w-32 lg:w-40 p-2 flex flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float"
+            onclick={`document.getElementById('${card.id}').showModal()`}
+          >
+            <div class="relative w-full mb-2 md:mb-3">
+              <img
+                src="/Folder.png"
+                alt="Decoración fondo"
+                class="w-full h-auto object-contain relative z-0"
+              />
+              {coverMap[card.id] &&
+                coverMap[card.id].map((src, i) => (
+                  <img
+                    src={src}
+                    alt={`${card.id} cover ${i + 1}`}
+                    class={coverClasses[i]}
+                  />
+                ))}
+              <img
+                src="/Folder2.png"
+                alt="Decoración frente"
+                class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-300 group-hover/float:scale-105"
+              />
+            </div>
+            <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">
+              {card.title}
+            </h3>
+            <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">
+              {card.category}
+            </p>
+          </div>
+        ))
+      }
     </div>
   </section>
 
-
-
-    <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const caseId = params.get('case');
-            if (caseId) {
-                const modal = document.getElementById(`modal-${caseId}`);
-                if (modal) {
-                    modal.showModal();
-                }
-            }
-        });
-    </script>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const caseId = params.get("case");
+      if (caseId) {
+        const modal = document.getElementById(`modal-${caseId}`);
+        if (modal) {
+          modal.showModal();
+        }
+      }
+    });
+  </script>
 </Layout>

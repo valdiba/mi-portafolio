@@ -5,48 +5,219 @@ interface Props {
   category: string;
   images: string[]; // Lista de rutas a tus PNG/SVG
   relatedCases?: { id: string; title: string; category?: string }[];
+  year?: string;
+  description?: string;
+  client?: string;
+  role?: string;
+  timeline?: string;
+  platform?: string;
 }
 
-const { id, title, category, images, relatedCases = [] } = Astro.props;
+const {
+  id,
+  title,
+  category,
+  images,
+  relatedCases = [],
+  year,
+  description,
+  client,
+  role,
+  timeline,
+  platform,
+} = Astro.props;
+
+const coverMap: Record<string, string[]> = {
+  "modal-expedia": [
+    "/expedia-cover-3.png",
+    "/expedia-cover-2.png",
+    "/expedia-cover-1.png",
+  ],
+  "modal-epam": ["/epam-cover-2.png", "/epam-cover-1.png"],
+  "modal-airgas": [
+    "/airgas-cover-3.png",
+    "/airgas-cover-2.png",
+    "/airgas-cover-1.png",
+  ],
+  "modal-coign": [
+    "/coign-cover-3.png",
+    "/coign-cover-2.png",
+    "/coign-cover-1.png",
+  ],
+  "modal-ekos": ["/ekos-cover-3.png", "/ekos-cover-2.png", "/ekos-cover-1.png"],
+  "modal-boost": ["/boost-cover-2.png", "/boost-cover-1.png"],
+};
+
+const coverClasses = [
+  "absolute inset-0 w-full h-full object-contain z-[3] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-3 md:group-hover/float:-translate-y-6 group-hover/float:-translate-x-2 md:group-hover/float:-translate-x-3 group-hover/float:scale-105 group-hover/float:-rotate-12",
+  "absolute inset-0 w-full h-full object-contain z-[4] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-1 md:group-hover/float:-translate-y-2 group-hover/float:translate-x-2 md:group-hover/float:translate-x-3 group-hover/float:scale-105 group-hover/float:rotate-12",
+  "absolute inset-0 w-full h-full object-contain z-[5] p-3.5 md:p-5 rounded-xl transition-transform duration-300 group-hover/float:-translate-y-2 md:group-hover/float:-translate-y-4 group-hover/float:scale-110 group-hover/float:rotate-3",
+];
 ---
 
-<dialog id={id} class="backdrop:bg-slate-900/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-0 max-w-none max-h-none w-full h-full fixed inset-0 z-[100] outline-none group">
-  
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] sm:w-[90vw] h-[95vh] sm:h-[90vh] rounded-2xl shadow-2xl flex flex-col items-center overflow-y-auto bg-slate-50 py-12 px-4">
-    
-    <button onclick={`document.getElementById('${id}').close()`} class="fixed top-4 right-4 md:top-8 md:right-8 z-[110] bg-white/80 backdrop-blur-md border border-slate-200 p-3 md:p-4 rounded-full hover:bg-brand hover:text-white transition-all shadow-xl hover:scale-110">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-5 md:size-6">
-        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
+<dialog
+  id={id}
+  class="backdrop:bg-slate-900/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-0 max-w-none max-h-none w-full h-full fixed inset-0 z-[100] outline-none group"
+  onclick="if(event.target === this) this.close()"
+>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] sm:w-[90vw] h-[95vh] sm:h-[90vh]"
+  >
+    <div
+      class="w-full h-full rounded-2xl shadow-2xl flex flex-col overflow-hidden bg-white"
+    >
+      <div class="w-full bg-white p-3 md:p-4 flex justify-end shrink-0 z-[110]">
+        <button
+          onclick={`document.getElementById('${id}').close()`}
+          class="text-black focus:outline-none p-2 md:p-3 hover:text-brand transition-all"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="size-5 md:size-6"
+          >
+            <path
+              d="M6 18L18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
 
-    <div class="flex flex-col w-[100%]">
-      {images.map((img) => (
-        <div class=" overflow-hidden bg-white">
-          <img src={img} alt="Project Frame" class="w-full h-auto loading-lazy" />
-        </div>
-      ))}
-    </div>
-
-    <footer class="mt-20 pb-12 w-full max-w-5xl flex flex-col items-center">
-      {relatedCases.length > 0 && (
-        <div class="w-full border-t border-slate-200 pt-12 mb-12">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-widest text-center mb-8">Otros casos de estudio</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full px-4">
-            {relatedCases.map((related) => (
-              <button 
-                onclick={`document.getElementById('${id}').close(); document.getElementById('${related.id}').showModal();`}
-                class="flex flex-col items-start p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-brand/30 transition-all text-left group/card"
-              >
-                {related.category && <span class="text-xs font-medium text-slate-500 mb-2">{related.category}</span>}
-                <span class="text-lg font-bold text-slate-900 group-hover/card:text-brand transition-colors">{related.title}</span>
-                <span class="text-sm font-medium text-brand mt-4 opacity-0 -translate-x-2 group-hover/card:opacity-100 group-hover/card:translate-x-0 transition-all">Ver caso &rarr;</span>
-              </button>
-            ))}
+      <div
+        class="flex-1 w-full overflow-y-auto flex flex-col items-center pt-0 pb-8 md:pb-12 px-4 outline-none"
+        tabindex="-1"
+        autofocus
+      >
+        <!-- Cabecera del Caso -->
+        <div class="mx-auto max-w-3xl w-full mt-8 md:mt-12 mb-8 text-left">
+          <div class="flex items-center gap-x-4 text-xs mb-6">
+            {year && <span class="text-slate-500">{year}</span>}
+            <span
+              class="rounded-full bg-white px-3 py-1.5 font-medium text-black ring-1 ring-slate-200 uppercase tracking-wider text-[10px]"
+            >
+              {category}
+            </span>
           </div>
+          <h1
+            class="text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl mb-6 text-balance"
+          >
+            {title}
+          </h1>
+          {
+            description && (
+              <p class="text-lg sm:text-xl leading-8 text-slate-600">
+                {description}
+              </p>
+            )
+          }
         </div>
-      )}
-    </footer>
+
+        <!-- Metadatos (Rol, Empresa, etc) -->
+        {
+          (client || role || timeline || platform) && (
+            <div class="mx-auto max-w-3xl w-full grid grid-cols-2 gap-6 border-y border-slate-200 py-8 sm:grid-cols-4 mb-16 text-left">
+              {client && (
+                <div>
+                  <p class="text-sm font-medium text-slate-500">Client</p>
+                  <p class="mt-2 font-semibold text-slate-900">{client}</p>
+                </div>
+              )}
+              {role && (
+                <div>
+                  <p class="text-sm font-medium text-slate-500">Role</p>
+                  <p class="mt-2 font-semibold text-slate-900">{role}</p>
+                </div>
+              )}
+              {timeline && (
+                <div>
+                  <p class="text-sm font-medium text-slate-500">Timeline</p>
+                  <p class="mt-2 font-semibold text-slate-900">{timeline}</p>
+                </div>
+              )}
+              {platform && (
+                <div>
+                  <p class="text-sm font-medium text-slate-500">Platform</p>
+                  <p class="mt-2 font-semibold text-slate-900">{platform}</p>
+                </div>
+              )}
+            </div>
+          )
+        }
+
+        <div class="flex flex-col w-[100%]">
+          {
+            images.map((img) => (
+              <div class=" overflow-hidden bg-white">
+                <img
+                  src={img}
+                  alt="Project Frame"
+                  class="w-full h-auto loading-lazy"
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <footer class="mt-20 pb-12 w-full max-w-5xl flex flex-col items-center">
+          {
+            relatedCases.length > 0 && (
+              <div class="w-full border-t border-slate-200 pt-12 mb-12">
+                <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-widest text-center mb-8">
+                  Otros casos de estudio
+                </h3>
+                <div class="flex flex-wrap justify-center items-start gap-8 sm:gap-16 w-full px-4">
+                  {relatedCases.map((related, index) => (
+                    <button
+                      onclick={`document.getElementById('${id}').close(); document.getElementById('${related.id}').showModal();`}
+                      class={`w-28 sm:w-36 md:w-44 p-2 flex-col items-center text-center transform hover:-translate-y-2 hover:z-30 transition-all duration-300 cursor-pointer group/float ${index >= 2 ? "hidden md:flex" : "flex"}`}
+                    >
+                      {coverMap[related.id] ? (
+                        <div class="relative w-full mb-2 md:mb-3">
+                          <img
+                            src="/Folder.png"
+                            alt="Decoración fondo"
+                            class="w-full h-auto object-contain relative z-0"
+                          />
+                          {coverMap[related.id].map((src, i) => (
+                            <img
+                              src={src}
+                              alt={`Project Cover ${i + 1}`}
+                              class={coverClasses[i]}
+                            />
+                          ))}
+                          <img
+                            src="/Folder2.png"
+                            alt="Decoración frente"
+                            class="absolute inset-0 w-full h-full object-contain z-10 transition-transform duration-300 group-hover/float:scale-105"
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src="/Fullfolder-pink.png"
+                          alt={related.category || "Folder"}
+                          class="w-full h-auto object-contain mb-2 md:mb-3"
+                        />
+                      )}
+                      <h3 class="font-sans tracking-normal font-bold text-slate-900 text-xs md:text-sm leading-tight transition-colors">
+                        {related.title}
+                      </h3>
+                      {related.category && (
+                        <p class="text-[9px] md:text-[10px] text-slate-500 font-medium mt-2 uppercase tracking-wider">
+                          {related.category}
+                        </p>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+        </footer>
+      </div>
+    </div>
   </div>
 </dialog>
 
@@ -57,12 +228,24 @@ const { id, title, category, images, relatedCases = [] } = Astro.props;
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Ocultar scrollbar pero mantener funcionalidad */
   dialog div::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Bloquear el scroll de la página de fondo cuando el modal está abierto */
+  :global(html:has(dialog[open])),
+  :global(body:has(dialog[open])) {
+    overflow: hidden !important;
   }
 </style>
